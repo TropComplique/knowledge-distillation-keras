@@ -76,7 +76,7 @@ def SqueezeNet(weight_decay, image_size=224):
     x = fire_module('6', x, squeeze=48, expand=192) # 13, 13, 384
     x = fire_module('7', x, squeeze=48, expand=192) # 13, 13, 384
     x = fire_module('8', x, squeeze=64, expand=256) # 13, 13, 512
-    x = fire_module('9', x, 64, 256, weight_decay, trainable=False) # 13, 13, 512
+    x = fire_module('9', x, squeeze=64, expand=256) # 13, 13, 512
     
     x = Dropout(0.5)(x)
     x = Convolution2D(
