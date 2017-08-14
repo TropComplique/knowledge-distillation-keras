@@ -1,11 +1,20 @@
 # Knowledge distillation with Keras
 
-Keras implementation of Hinton's knowledge distillation, a way of transferring knowledge from a large model into a smaller model.
+Keras implementation of Hinton's knowledge distillation (KD), a way of transferring knowledge from a large model into a smaller model.
 
 ## Summary
 * I use Caltech-256 dataset for a demonstration of the technique.
-* I transfer knowledge from Xception to MobileNet.
-* Results: ???
+* I transfer knowledge from Xception to MobileNet-0.25 and SqueezeNet v1.1.
+* Results: 
+
+| model | accuracy, % | top 5 accuracy, %| logloss |
+| --- | --- | --- | --- | 
+| Xception    | 82.3 | 94.7 | 0.705 |
+| MobileNet-0.25 | 64.6 | 85.9 | 1.455 |
+| MobileNet-0.25 with KD | 66.2 | 86.7 | 1.464 |
+| SqueezeNet v1.1 | 67.2 | 86.5 | 1.555 |
+| SqueezeNet v1.1 with KD | 68.9 | 87.4 | 1.297 |
+
 
 ## Implementation details
 * I use pretrained on ImageNet models.
